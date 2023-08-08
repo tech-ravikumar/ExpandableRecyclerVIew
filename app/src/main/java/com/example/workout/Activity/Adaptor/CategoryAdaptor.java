@@ -23,6 +23,7 @@ import com.example.workout.Activity.Click;
 import com.example.workout.Activity.MainActivity;
 import com.example.workout.Activity.Model.CategoryModel;
 import com.example.workout.Activity.Model.SubcategoryModel;
+import com.example.workout.Activity.Url;
 import com.example.workout.R;
 import com.google.gson.Gson;
 
@@ -99,7 +100,7 @@ public CategoryAdaptor(Context context,List<CategoryModel>arraylist,List<Subcate
         progressDialog.setCancelable(false);
         progressDialog.show();
         arraylist2.clear();
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.1.29/php_rest_api/showsubcategories.php?rid="+search, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url.BASEURL+"showsubcategories.php?rid="+search, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("searchresponse",response);

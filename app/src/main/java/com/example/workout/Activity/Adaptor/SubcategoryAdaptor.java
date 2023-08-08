@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.workout.Activity.MainActivity;
 import com.example.workout.Activity.Model.SubcategoryModel;
+import com.example.workout.Activity.Url;
 import com.example.workout.R;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class SubcategoryAdaptor extends RecyclerView.Adapter<SubcategoryAdaptor.
     @Override
     public void onBindViewHolder(@NonNull SubcategoryAdaptor.MyViewHolder holder, int position) {
 
-        Glide.with(holder.itemView.getContext()).load("http://192.168.1.29/php_rest_api/upload/"+arraylist.get(position).getExer_image()).into(holder.image);
+        Glide.with(holder.itemView.getContext()).load(Url.BASEURL+"upload/"+arraylist.get(position).getExer_image()).into(holder.image);
         holder.exerciseName.setText(arraylist.get(position).getExer_name());
         holder.exerciseDescription.setText(arraylist.get(position).getExer_description());
 

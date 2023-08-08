@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void fetchCategory(){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.1.29/php_rest_api/category.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Url.BASEURL+"category.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("res",response);
